@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//büyük ekranlarda devreye girecek kodlar
+@mixin laptop{
+    // 1400px altında devreye girecek stiller
+    @media (max-width: 1400px) {
+        //buraya gelicek kodları include ile gödericez
+        @content;
+    }
+}
+
+//küçük ekranlarda devreye girecek kodlar
+@mixin mobile{    
+    // 700px altında devreye girecek stiller
+    @media (max-width: 700px) {
+        //buraya gelicek kodları include ile gödericez
+        @content;
+    }
+}
+
+body {
+    font-family: 'poppins';
+}
+
+// Header
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+
+    @include mobile {
+        padding: 10px 20px;
+        img {
+            width: 70px !important;
+        }
+    }
+
+    img {
+        width: 100px;
+        cursor: pointer;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        a {
+            padding: 0 20px;
+            border-right: 1px solid;
+            cursor: pointer;
+            transition: all 0.5s;
+            text-decoration: none;
+            white-space: nowrap;
+            color: #4747F3;
+            &:hover {
+                color: crimson;
+                transition: all 0.5s;
+            }
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+}
+
+// Hero
+.hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 100px;
+    gap: 200px;
+    background: linear-gradient(rgb(223, 223, 233) 50%, white 50%);
+    
+    @include laptop {
+        padding: 25px 50px;
+        gap: 200px;
+    }
+
+    @include mobile {
+        flex-direction: column;
+        padding: 10px 30px;
+        gap: 100px;
+    }
+}
+
+// Hero > Sol Taraf
+.slogan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 500px;
+    margin: auto;
+
+    h1 {
+        font-size: 40px;
+        text-align: center;
+        @include mobile {
+            font-size: 35px;
+        }
+    }
+
+    p {
+        font-family: 'poppins';
+        color: rgb(122, 122, 122);
+        text-align: center;
+    }
+
+    img {
+        width: 200px;
+        mix-blend-mode: darken;
+    }
+
+    button {
+        background-color: crimson;
+        border: none;
+        padding: 10px 20px;
+        border: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border-radius: 10px;
+        color: white;
+        &:hover {
+            transition: all 0.3s;
+            background: rgb(144, 5, 33);
+        }
+    }
+}
+
+// Hero > Sağ Taraf
+.images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    p {
+        font-family: 'Inter';
+        text-align: center;
+    }
+
+    .banner {
+        max-width: 600px;
+        @include mobile {
+            width: 100%;
+        }
+    }
+    
+    .track {
+        max-width: 300px;
+        mix-blend-mode: difference;
+        border-radius: 10px;
+    }
+}
+
+// İç Dizayn Alanı
+#interior {
+    margin-top: 40px;
+    height: 80vh;
+    background:
+    radial-gradient(rgba(0, 0, 0, 0.5), black), 
+    url("/images/interior.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+
+    p {
+        max-width: 500px;
+        font-family: 'poppins';
+        text-align: center;
+        font-size: 22px;
+    }
+
+    button {
+        background: transparent;
+        border: 1px solid white;
+        padding: 15px 60px;
+        color: white;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-family: 'poppins';
+        &:hover {
+            background: white;
+            color: black;
+        }
+    }
+}
+
+// Geçmişte Günümüze Alanı
+#timeline {
+    padding: 50px;
+
+    @include mobile() {
+        padding: 20px;
+    }
+
+    h1 {
+        font-family: 'Inter';
+        text-align: center;
+        margin-bottom: 45px;
+
+        span {
+            color: crimson;
+        }
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        @include mobile() {
+            gap: 50px;
+            grid-template-columns: 1fr;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-family: 'Inter';
+            text-align: center;
+
+            img {
+                height: 200px;
+                object-fit: contain;
+                mix-blend-mode: darken;
+            }
+
+            button {
+                width: 300px;
+                margin: auto;
+                border: none;
+                background: cyan;
+                color: white;
+                padding: 10px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 0.3s;
+                &:hover {
+                    background: rgba(4, 161, 161, 0.836);
+                }
+            }
+        }
+    }
+}
+
+// Dış Dizayn Alanı
+#exterior {
+    //Extend > 
+    @extend #interior;
+    background: 
+    radial-gradient(rgba(0, 0, 0, 0.356), black), 
+    url('/images/exterior-4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+// En Son Modeller
+#latest-models {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    height: 80vh;
+
+    .slogan {
+        h2 {
+            font-family: 'Poppins';
+            font-size: 28px;
+        }
+
+        p {
+            text-align: justify;
+        }
+    }
+
+    .images {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        img {
+            height: 200px;
+        }
+    }
+}
+
+// Footer
+#footer{
+    background-color: #484872;
+    width: 100%;
+    text-align: center;
+    padding: 20px 80px;
+    margin-top: 40px;
+
+    p {
+        color: whitesmoke;
+        margin: 20px auto;
+    }
+}

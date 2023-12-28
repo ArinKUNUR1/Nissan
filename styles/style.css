@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "poppins";
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+}
+@media (max-width: 700px) {
+  header {
+    padding: 10px 20px;
+  }
+  header img {
+    width: 70px !important;
+  }
+}
+header img {
+  width: 100px;
+  cursor: pointer;
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+header nav a {
+  padding: 0 20px;
+  border-right: 1px solid;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #4747F3;
+}
+header nav a:hover {
+  color: crimson;
+  transition: all 0.5s;
+}
+header nav a:last-child {
+  border: none;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 100px;
+  gap: 200px;
+  background: linear-gradient(rgb(223, 223, 233) 50%, white 50%);
+}
+@media (max-width: 1400px) {
+  .hero {
+    padding: 25px 50px;
+    gap: 200px;
+  }
+}
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column;
+    padding: 10px 30px;
+    gap: 100px;
+  }
+}
+
+.slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 500px;
+  margin: auto;
+}
+.slogan h1 {
+  font-size: 40px;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .slogan h1 {
+    font-size: 35px;
+  }
+}
+.slogan p {
+  font-family: "poppins";
+  color: rgb(122, 122, 122);
+  text-align: center;
+}
+.slogan img {
+  width: 200px;
+  mix-blend-mode: darken;
+}
+.slogan button {
+  background-color: crimson;
+  border: none;
+  padding: 10px 20px;
+  border: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 10px;
+  color: white;
+}
+.slogan button:hover {
+  transition: all 0.3s;
+  background: rgb(144, 5, 33);
+}
+
+.images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.images p {
+  font-family: "Inter";
+  text-align: center;
+}
+.images .banner {
+  max-width: 600px;
+}
+@media (max-width: 700px) {
+  .images .banner {
+    width: 100%;
+  }
+}
+.images .track {
+  max-width: 300px;
+  mix-blend-mode: difference;
+  border-radius: 10px;
+}
+
+#interior, #exterior {
+  margin-top: 40px;
+  height: 80vh;
+  background: radial-gradient(rgba(0, 0, 0, 0.5), black), url("/images/interior.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+}
+#interior p, #exterior p {
+  max-width: 500px;
+  font-family: "poppins";
+  text-align: center;
+  font-size: 22px;
+}
+#interior button, #exterior button {
+  background: transparent;
+  border: 1px solid white;
+  padding: 15px 60px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: "poppins";
+}
+#interior button:hover, #exterior button:hover {
+  background: white;
+  color: black;
+}
+
+#timeline {
+  padding: 50px;
+}
+@media (max-width: 700px) {
+  #timeline {
+    padding: 20px;
+  }
+}
+#timeline h1 {
+  font-family: "Inter";
+  text-align: center;
+  margin-bottom: 45px;
+}
+#timeline h1 span {
+  color: crimson;
+}
+#timeline .cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media (max-width: 700px) {
+  #timeline .cards {
+    gap: 50px;
+    grid-template-columns: 1fr;
+  }
+}
+#timeline .cards .card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "Inter";
+  text-align: center;
+}
+#timeline .cards .card img {
+  height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  mix-blend-mode: darken;
+}
+#timeline .cards .card button {
+  width: 300px;
+  margin: auto;
+  border: none;
+  background: cyan;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#timeline .cards .card button:hover {
+  background: rgba(4, 161, 161, 0.836);
+}
+
+#exterior {
+  background: radial-gradient(rgba(0, 0, 0, 0.356), black), url("/images/exterior-4.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#latest-models {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  height: 80vh;
+}
+#latest-models .slogan h2 {
+  font-family: "Poppins";
+  font-size: 28px;
+}
+#latest-models .slogan p {
+  text-align: justify;
+}
+#latest-models .images {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#latest-models .images img {
+  height: 200px;
+}
+
+#footer {
+  background-color: #484872;
+  width: 100%;
+  text-align: center;
+  padding: 20px 80px;
+  margin-top: 40px;
+}
+#footer p {
+  color: whitesmoke;
+  margin: 20px auto;
+}/*# sourceMappingURL=style.css.map */
